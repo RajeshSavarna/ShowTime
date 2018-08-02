@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>Indian Districts</title>
+<script src="themes/js/jquery-1.7.2.min.js"></script>
+<script src='themes/js/state.js'></script>
+<link rel="stylesheet" type="text/css" href="themes/css/style1.css">
+
+<link href="./bootstrap/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<!-- 
+    <div class='resp_code frms'>
+      <p align='center'><h5><font style='font: 1em/1.3em Tahoma,Geneva,sans-serif;'>
+      <b>Select Your Region</b></font></h5></p>
+      <div id="selection">
+        <select id="listBox" onchange='selct_district(this.value)'></select>
+        <select id='secondlist'></select>
+      </div>
+      <!-- 
+      <div id="dumdiv" align="center" style=" font-size: 10px;color: #dadada;">
+        <a id="dum" style="padding-right:0px; text-decoration:none;color: green;text-align:center;" href="http://www.showtime.com">&copy; ShowTime</a>
+      </div>
+       ->
+    </div>
+    -->
+
+	<button class="btn btn-primary" data-toggle="modal"
+		data-target="#myModal1">Select District</button>
+	<div class="modal fade" id="myModal1" tabindex="-1" role="dialog"
+		aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<!-- 
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+					<h4 class="modal-title text-center" id="myModalLabel1">Select Your Region</h4>
+				</div>
+				 -->
+				<div class="modal-body">
+					<div class='resp_code frms'>
+				      <p><h5 align='center'><font style='font: 1em/1.3em Tahoma,Geneva,sans-serif;'>
+				      <b>Select Your Region</b></font></h5></p>
+				      <div id="selection">
+				        <select id="listBox" onchange='selct_district(this.value)'></select>
+				        <select id='secondlist'></select>
+				      </div>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+    $('#secondlist').change(function(){
+    	//alert(location.hostname+' asked to \nPress ok if '+this.value+' is Your Selected Region');
+    	var res = confirm(this.value+' is Your Selected Region');
+    	if (res == true) {
+    	    txt = $('#myModal1').modal('hide');
+    	}
+    });
+</script>
+</body>
+</html>
+

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login &amp; Register</title>
+
+<link href="./Modal/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="themes/css/copy.css" rel="stylesheet" type="text/css" media="all" />
+<script src="themes/js/jquery-1.7.2.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src='themes/js/state.js'></script>
+
+</head>
+<body>
+	<!-- Large modal -->
+	<!--
+	<button class="btn btn-primary" data-toggle="modal"
+		data-target="#myModal">Login</button>
+	-->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+					<h4 class="modal-title text-center" id="myModalLabel">Don't Wait, Login
+						now!</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-8"
+							style="border-right: 1px dotted #C2C2C2; padding-right: 30px;">
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#Login" data-toggle="tab">Login</a></li>
+								<li><a href="#Registration" data-toggle="tab">Registration</a></li>
+							</ul>
+							<!-- Tab panes -->
+							<div class="tab-content">
+								<div class="tab-pane active" id="Login">
+									<form role="form" class="form-horizontal">
+										<div class="form-group">
+											<label for="email" class="col-sm-2 control-label">
+												Email</label>
+											<div class="col-sm-10">
+												<input type="email" class="form-control" id="email1"
+													placeholder="Email" required/>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="exampleInputPassword1"
+												class="col-sm-2 control-label"> Password</label>
+											<div class="col-sm-10">
+												<input type="password" class="form-control"
+													id="exampleInputPassword1" placeholder="password" required/>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-2"></div>
+											<div class="col-sm-10">
+												<button type="submit" class="btn btn-primary btn-sm">
+													Submit</button>
+												<a href="javascript:;">Forgot your password?</a>
+											</div>
+										</div>
+									</form>
+								</div>
+								<div class="tab-pane" id="Registration">
+									<form role="form" class="form-horizontal">
+										<div class="form-group">
+											<label for="email" class="col-sm-2 control-label">
+												Name</label>
+											<div class="col-sm-10">
+												<div class="row">
+													<div class="col-md-3">
+														<select class="form-control">
+															<option>Mr.</option>
+															<option>Ms.</option>
+															<option>Mrs.</option>
+														</select>
+													</div>
+													<div class="col-md-9">
+														<input type="text" pattern="[A-Za-z ]{3,}" class="form-control" placeholder="Name" required title="Name should contains only text and minimum character should be 3"/>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="gender" class="col-sm-2 control-label">
+												Gender</label>
+											<div class="col-sm-10">
+												<div class="row">
+													<div class="col-md-5">
+														<select class="form-control">
+															<option>Male</option>
+															<option>Female</option>
+															<option>Others</option>
+														</select>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="email" class="col-sm-2 control-label">
+												Email</label>
+											<div class="col-sm-10">
+												<input type="email" class="form-control" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+													placeholder="Email" required/>
+											</div>
+										</div>
+										
+										<div class="form-group">
+											<label for="password" class="col-sm-2 control-label">
+												Password</label>
+											<div class="col-sm-10">
+												<input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control" id="password"
+													placeholder="Password" required title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"/>
+											</div>
+										</div>
+										
+										<div class="form-group">
+											<label for="mobile" class="col-sm-2 control-label">
+												Mobile</label>											
+											<div class="col-sm-10">
+												<div class="row">
+													<div class="col-md-3">
+														<input type="text" class="form-control text-center" value="+91" disabled/>
+													</div>
+													<div class="col-md-9">
+														<input class="form-control" id="mobile" pattern="[0-9]{10,10}" placeholder="Mobile" required title="Mobile number should be of 10 digits"/>
+													</div>
+												</div>
+											</div>
+										</div>
+										
+										<div class="form-group">
+											<label for="address" class="col-sm-2 control-label">
+												Address</label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control" id="address"
+													placeholder="eg: h.no: B4, street: rahul nagar" required/>
+											</div>
+										</div>
+										
+										<div class="form-group">
+											<label for="address" class="col-sm-2 control-label"> </label>										
+											<div class="col-sm-10">
+												<div class="row" id="selection">
+												<div class="col-md-6">
+											        <select class="form-control" id="listBox" onchange='selct_district(this.value)'></select>
+											    </div>
+											    <div class="col-md-6">    
+											        <select class="form-control" id='secondlist'></select>
+											    </div>
+												</div>
+											</div>
+										</div>
+									
+										<div class="row">
+											<div class="col-sm-2"></div>
+											<div class="col-sm-10">
+												<button type="submit" class="btn btn-primary btn-md">
+													Save &amp; Continue</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div id="OR" class="hidden-xs"></div>
+						</div>
+						<div class="col-md-4">
+							<div class="row text-center sign-with">
+								<div class="col-md-12">
+									<h3 class="other-nw">Sign in with</h3>
+								</div>
+								<div class="col-md-12">
+									<div class="btn-group btn-group-justified">
+										<a href="#" class="btn btn-primary">Facebook</a> <a href="#"
+											class="btn btn-danger"> Google +</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		$('#myModal').modal('show');
+	</script>
+</body>
+</html>

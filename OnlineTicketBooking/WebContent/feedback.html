@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ <link rel="shortcut icon" href="themes/images/icon.png">
+<!-- bootstrap -->
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+
+<link href="themes/css/bootstrappage.css" rel="stylesheet" />
+
+<link href="themes/css/copy.css" rel="stylesheet">
+<link href="themes/css/icomoon.css" rel="stylesheet">
+
+<!-- global styles -->
+<link href="themes/css/flexslider.css" rel="stylesheet" />
+<link href="themes/css/main.css" rel="stylesheet" />
+<link href="themes/css/style1.css" rel="stylesheet" type="text/css"
+	media="all" />
+
+<!-- scripts -->
+<script src="themes/js/jquery-1.7.2.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="themes/js/superfish.js"></script>
+<script src="themes/js/jquery.scrolltotop.js"></script>
+<script src="themes/js/jquery.redirect.js"></script>
+<script src='themes/js/state.js'></script>
+
+<!-- datatable -->
+<link rel="stylesheet" type="text/css"
+	href="./bootstrap/dt/DT_bootstrap.css">
+<script type="text/javascript" charset="utf-8"
+	src="./bootstrap/dt/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf-8"
+	src="./bootstrap/dt/DT_bootstrap.js"></script>
+
+ </head>
+ <body>
+  <div class="modal fade" id="test_feedback" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Feedback</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-error hide" id="error_deactivated">
+                            Paper has been deactivated
+                        </div>
+                        <div class="alert alert-error hide" id="error_feedback">
+                            Please fill all the fields
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span1"></div>
+                            <div class="span5">Rate your overall experience : </div>
+                            <div class="span6">
+                                <select ID='feedback_rate'>
+                                    <option>Excellent</option>
+                                    <option>Very good</option>
+                                    <option>Good</option>
+                                    <option>Bad</option>
+                                    <option>Very bad</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="div-space">&nbsp;</div>
+                        <div class="row-fluid">
+                            <div class="span1"></div>
+                            <div class="span5">Did you face any issue? :</div>
+                            <div class="span6">
+                                <div class="span3">
+                                    <input type="radio" value="No" name="feedback_issue" id="feedback_issue" onclick="hideTextarea()"/> No<br>
+                                </div>
+                                <div class="span3">
+                                    <input type="radio" value="Yes" name="feedback_issue" id="feedback_issue" onclick="showTextarea()"/> Yes 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-fluid hide" id="issue_feedback_div">
+                            <div class="span1"></div>
+                            <div class="span10"><textarea id='issue_feedback' style="width:100%;resize: none" ></textarea></div>
+                            <div class="span1"></div>
+                        </div>
+                        <div class="div-space">&nbsp;</div>
+                        <div class="row-fluid">
+                            <div class="span1"></div>
+                            <div class="span11">Remarks :</div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span1"></div>
+                            <div class="span10"><textarea id='remark_feedback' style="width:100%;resize: none" ></textarea></div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary pull-right" onclick="SubmitFeedback();">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<script>
+		$('#test_feedback').modal('show');
+		</script>
+ </body>
+</html>

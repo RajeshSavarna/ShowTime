@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login &amp; Register</title>
+
+<link href="bootstrap/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="themes/css/copy.css" rel="stylesheet" type="text/css" media="all" />
+<script src="themes/js/jquery-1.7.2.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src='themes/js/state.js'></script>
+
+</head>
+<body>
+	<!-- Large modal -->
+	<!--
+	<button class="btn btn-primary" data-toggle="modal"
+		data-target="#myModal">Login</button>
+	-->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+					<h4 class="modal-title text-center" id="myModalLabel">Don't Wait, Login
+						now!</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-8"
+							style="border-right: 1px dotted #C2C2C2; padding-right: 30px;">
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#Login" data-toggle="tab">Login</a></li>
+								<li><a href="#Registration" data-toggle="tab">Registration</a></li>
+							</ul>
+							<!-- Tab panes -->
+							<div class="tab-content">
+								<div class="tab-pane active" id="Login">
+									    <div class="row">
+											<form class="form-horizontal" action='' method="POST">
+											  <fieldset>
+											    <div class="control-group">
+											      <label class="control-label"  for="username">Email</label>
+											      <div class="controls">
+											        <input type="text" id="username" name="username" placeholder="" class="input-xlarge">
+											      </div>
+											    </div>
+											    <div class="control-group">
+											      <label class="control-label" for="password">Password</label>
+											      <div class="controls">
+											        <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+											      </div>
+											    </div>
+											    <div class="control-group">
+											      <div class="controls">
+											        <button class="btn btn-success">Login</button>
+											      </div>
+											    </div>
+											  </fieldset>
+											</form>
+										</div>
+									</div>
+								<div class="tab-pane" id="Registration">
+									<div class="row">
+											<form class="form-horizontal" action='' method="POST">
+											  <fieldset>
+											  
+											    <div class="control-group">
+											      <label class="control-label"  for="Name">Name</label>
+											      <div class="controls">
+										      		<select class="input-mini">
+														<option>Mr.</option>
+														<option>Ms.</option>
+														<option>Mrs.</option>
+													</select>
+											        <input type="text" pattern="[A-Za-z ]{3,}" class="input-large" placeholder="Name" required title="Name should contains only text and minimum character should be 3"/>
+											      </div>
+											    </div>
+											    
+											    <div class="control-group">
+											      <label class="control-label" for="Gender">Gender</label>
+											      <div class="controls">
+											        <select class="input-xlarge">
+															<option>Male</option>
+															<option>Female</option>
+															<option>Others</option>
+													</select>
+											      </div>
+											    </div>
+											    
+											    <div class="control-group">
+											      <label class="control-label" for="Email">Email</label>
+											      <div class="controls">
+											      <div class="input-prepend">
+      												<span class="add-on"><i class="icon-envelope"></i></span>
+											        <input type="email" class="input-xlarge" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+													placeholder="Email" required/>
+											      </div>
+											      </div>
+											    </div>
+											    
+											    <div class="control-group">
+											      <label class="control-label"  for="password">Password</label>
+											      <div class="controls">
+											        <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="input-xlarge" id="password"
+													placeholder="Password" required title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"/>
+											      </div>
+											    </div>
+											    
+											    <div class="control-group">
+											      <label class="control-label" for="number">Number</label>
+											      <div class="controls">
+											      <div class="input-prepend">
+											        <span class="add-on">+91</span>
+											        <input type="text" class="input-large" id="mobile" pattern="[0-9]{10,10}" placeholder="Mobile" required title="Mobile number should be of 10 digits"/>
+											      </div>
+											      </div>
+											    </div>
+											    
+											    <div class="control-group">
+											      <label class="control-label" for="Address">Address</label>
+											      <div class="controls">
+											        <input type="text" class="input-xlarge" id="address"
+													placeholder="eg: h.no: B4, street: rahul nagar" required/>
+											      </div>
+											    </div>
+											    
+											    <div class="control-group">
+											      <div class="controls">
+											        <div id="selection">
+												        <select class="input-medium" id="listBox" onchange='selct_district(this.value)'></select>											       
+												        <select class="input-medium" id='secondlist'></select>
+													</div>
+											      </div>
+											    </div>
+											    
+											    <div class="control-group">
+											      <div class="controls">
+											        <button class="btn btn-success">Register</button>
+											      </div>
+											    </div>
+											    
+											  </fieldset>
+											</form>
+										</div>
+								</div>
+							</div>
+							<div id="OR" class="hidden-xs"></div>
+						</div>
+						<div class="col-md-2">
+							<div class="row text-center sign-with">
+								<div class="col-md-12">
+									<h3 class="other-nw">Sign in with</h3>
+								</div>
+								<div class="col-md-12">
+									<div class="btn-group btn-group-justified">
+										<a href="#" class="btn btn-primary">Facebook</a> <a href="#"
+											class="btn btn-danger"> Google +</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		$('#myModal').modal('show');
+	</script>
+</body>
+</html>
